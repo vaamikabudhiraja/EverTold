@@ -1,14 +1,12 @@
 /* ───────────────────────── Header ───────────────────────── */
 
+/* A solid bar, like the top of a cinema screen, so nothing blends with the film. */
 .header {
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
-  mix-blend-mode: difference;
-}
-
-.header:has(.menuOpen) {
-  mix-blend-mode: normal;
+  background: var(--ink);
+  border-bottom: 1px solid var(--line-dark);
 }
 
 .headerBar {
@@ -16,7 +14,8 @@
   grid-template-columns: 1.1fr 1fr 1.3fr auto;
   align-items: center;
   gap: 24px;
-  padding: 18px var(--gutter);
+  min-height: var(--header-h);
+  padding: 0 var(--gutter);
   font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--ivory);
@@ -223,6 +222,7 @@ a.headerMeta:hover {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  padding-top: var(--header-h);
   background: var(--ink);
 }
 
@@ -231,7 +231,7 @@ a.headerMeta:hover {
   flex: none;
   width: 100%;
   aspect-ratio: 1920 / 818;
-  max-height: 74svh;
+  max-height: calc(100svh - var(--header-h) - 220px);
   overflow: hidden;
   background: var(--ink-2);
 }
@@ -243,7 +243,7 @@ a.headerMeta:hover {
 }
 
 .heroMediaIn {
-  animation: heroIn 2s var(--ease-out) both;
+  animation: heroIn 1.2s ease-out both;
 }
 
 .heroMedia video {
@@ -255,22 +255,7 @@ a.headerMeta:hover {
 @keyframes heroIn {
   from {
     opacity: 0;
-    filter: blur(10px);
-    transform: scale(1.05);
   }
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
-}
-
-.heroShade {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(13, 14, 9, 0.6) 0%, rgba(13, 14, 9, 0) 18%),
-    linear-gradient(0deg, var(--ink) 0%, rgba(13, 14, 9, 0) 24%);
 }
 
 .heroInner {
@@ -280,7 +265,7 @@ a.headerMeta:hover {
   align-items: end;
   align-content: end;
   gap: 24px 48px;
-  padding: 8px var(--gutter) 32px;
+  padding: 28px var(--gutter) 32px;
   opacity: 0;
   animation: fadeUp 1s var(--ease-out) 0.8s forwards;
 }
@@ -373,7 +358,7 @@ a.headerMeta:hover {
   }
   .heroInner {
     grid-template-columns: 1fr;
-    padding-top: 0;
+    padding-top: 22px;
   }
 }
 
@@ -396,7 +381,7 @@ a.headerMeta:hover {
 .manifestoFoot {
   margin-top: clamp(64px, 9vw, 130px);
   display: grid;
-  grid-template-columns: 1fr minmax(0, 42vw);
+  grid-template-columns: 1fr minmax(0, 34vw);
   gap: 40px;
   align-items: end;
 }
@@ -435,7 +420,7 @@ a.headerMeta:hover {
 
 .manifestoImg {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--ink-3);
@@ -479,7 +464,7 @@ a.headerMeta:hover {
 .thumb img {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -498,6 +483,7 @@ a.headerMeta:hover {
 
 .zoomImg img {
   object-fit: cover;
+  object-position: 50% 38%;
 }
 
 .zoom::after {
@@ -721,6 +707,11 @@ a.headerMeta:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Faces sit in the upper third of the photos; keep them in the thin pills. */
+.inlineMedia img {
+  object-position: 50% 32%;
 }
 
 .panelNote {

@@ -6,20 +6,20 @@
 export type Service = {
   title: string;
   body: string;
-  /** Visual for the service card: a photo key from media.ts, the hero film, or a chat illustration. */
-  media: "chat" | "film" | "kiss" | "noodles" | "doorstep" | "piggyback" | "spaghetti";
+  /** Visual for the service card: a key of servicePhotos in media.ts, the hero film, or a chat illustration. */
+  media: "chat" | "film" | "storySite" | "rsvp" | "vault" | "gallery";
 };
 
 export const services: Service[] = [
   {
     title: "The Story Site",
     body: "An immersive, scroll-told website for your wedding — your story, your weekend, your city — designed around your palette, never a template.",
-    media: "kiss",
+    media: "storySite",
   },
   {
     title: "RSVP & Guest List",
     body: "Per-event RSVPs with plus-ones, dietary notes and song requests, flowing into a live guest list you can export in one click.",
-    media: "noodles",
+    media: "rsvp",
   },
   {
     title: "AI Concierge",
@@ -29,7 +29,7 @@ export const services: Service[] = [
   {
     title: "The Wedding Vault",
     body: "Every detail in one place — events, venues, hotel blocks, travel, FAQs. Update it once and the site and concierge update with it.",
-    media: "doorstep",
+    media: "vault",
   },
   {
     title: "Schedule & Travel",
@@ -39,7 +39,7 @@ export const services: Service[] = [
   {
     title: "Gallery & Keepsake",
     body: "Before the day, your story. After it, a gallery your guests return to. Your site becomes the keepsake of the weekend.",
-    media: "piggyback",
+    media: "gallery",
   },
 ];
 

@@ -71,7 +71,7 @@ export function Manifesto() {
             <a href="#services">What we make</a>
           </figcaption>
           <div className={styles.manifestoImg} data-fig>
-            <Image src={photos.piggyback.src} alt={photos.piggyback.alt} fill sizes="(min-width: 900px) 40vw, 100vw" />
+            <Image src={photos.dance.src} alt={photos.dance.alt} fill sizes="(min-width: 900px) 34vw, 100vw" />
           </div>
         </figure>
       </div>

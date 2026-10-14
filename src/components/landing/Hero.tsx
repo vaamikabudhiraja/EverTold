@@ -35,7 +35,6 @@ export function Hero() {
             </video>
           </div>
         </div>
-        <div className={styles.heroShade} aria-hidden />
       </div>
 
       <div className={styles.heroInner}>

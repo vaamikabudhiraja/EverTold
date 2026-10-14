@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 
-import { heroFilm, photos } from "@/content/media";
+import { heroFilm, servicePhotos } from "@/content/media";
 import { services, type Service } from "@/content/studio";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
@@ -27,7 +27,7 @@ function CardMedia({ media }: { media: Service["media"] }) {
       </video>
     );
   }
-  const p = photos[media];
+  const p = servicePhotos[media];
   return <Image src={p.src} alt={p.alt} fill sizes="(min-width: 900px) 32vw, 85vw" />;
 }
 

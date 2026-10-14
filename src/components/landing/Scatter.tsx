@@ -9,15 +9,15 @@ import styles from "./landing.module.css";
 
 // Thumbnails scattered around the hero photo: position (% of stage), width (vw), tilt.
 const thumbs = [
-  { p: photos.noodles, l: 13, t: 14, w: 8, r: -5 },
-  { p: photos.spaghetti, l: 31, t: 7, w: 9, r: 3 },
-  { p: photos.doorstep, l: 68, t: 9, w: 7, r: -2 },
-  { p: photos.piggyback, l: 85, t: 27, w: 8.5, r: 4 },
-  { p: photos.doorstep, l: 6, t: 50, w: 9, r: 2 },
-  { p: photos.piggyback, l: 20, t: 76, w: 7.5, r: -4 },
-  { p: photos.noodles, l: 77, t: 66, w: 10, r: -3 },
-  { p: photos.spaghetti, l: 58, t: 85, w: 8, r: 2 },
-  { p: photos.kiss, l: 38, t: 84, w: 6, r: -2 },
+  { p: photos.garden, l: 13, t: 14, w: 8, r: -5 },
+  { p: photos.thankYou, l: 31, t: 7, w: 9, r: 3 },
+  { p: photos.dance, l: 68, t: 9, w: 7, r: -2 },
+  { p: photos.bar, l: 85, t: 27, w: 8.5, r: 4 },
+  { p: photos.diner, l: 6, t: 50, w: 9, r: 2 },
+  { p: photos.dance, l: 20, t: 76, w: 7.5, r: -4 },
+  { p: photos.thankYou, l: 77, t: 66, w: 10, r: -3 },
+  { p: photos.garden, l: 58, t: 85, w: 8, r: 2 },
+  { p: photos.bar, l: 38, t: 84, w: 6, r: -2 },
 ];
 
 export function Scatter() {
@@ -88,7 +88,7 @@ export function Scatter() {
 
         <div className={styles.zoom} data-zoom>
           <div className={styles.zoomImg} data-zoom-img>
-            <Image src={photos.kiss.src} alt={photos.kiss.alt} fill sizes="100vw" />
+            <Image src={photos.diner.src} alt={photos.diner.alt} fill sizes="100vw" />
           </div>
         </div>
 

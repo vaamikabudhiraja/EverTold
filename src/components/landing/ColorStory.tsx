@@ -21,9 +21,9 @@ const panels: Panel[] = [
   {
     eyebrow: "RSVPs",
     lines: [
-      [{ photo: photos.noodles }, "If they're coming"],
+      [{ photo: photos.garden }, "If they're coming"],
       ["you'll know", { film: true }],
-      [{ photo: photos.kiss }, "the second they say yes"],
+      [{ photo: photos.diner }, "the second they say yes"],
     ],
     note: "Per-event RSVPs land in a live guest list — headcounts, plus-ones and dietary notes included.",
     bg: "var(--red)",
@@ -32,8 +32,8 @@ const panels: Panel[] = [
   {
     eyebrow: "AI concierge",
     lines: [
-      [{ photo: photos.spaghetti }, "If they're lost"],
-      ["the concierge", { photo: photos.doorstep }],
+      [{ photo: photos.bar }, "If they're lost"],
+      ["the concierge", { photo: photos.thankYou }],
       [{ film: true }, "will find them"],
     ],
     note: "An AI concierge that has read every detail of your wedding — and answers at 2am, in your tone.",
@@ -43,9 +43,9 @@ const panels: Panel[] = [
   {
     eyebrow: "Live updates",
     lines: [
-      [{ photo: photos.piggyback }, "If plans change"],
-      ["every guest", { photo: photos.noodles }],
-      [{ photo: photos.kiss }, "hears it first"],
+      [{ photo: photos.dance }, "If plans change"],
+      ["every guest", { photo: photos.garden }],
+      [{ photo: photos.diner }, "hears it first"],
     ],
     note: "Edit once. The site, the schedule and the concierge update together — no reprints, no reply-all.",
     bg: "var(--oxblood)",

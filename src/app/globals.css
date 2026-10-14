@@ -25,6 +25,7 @@
   --font-sans-stack: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
 
   --gutter: clamp(16px, 3vw, 40px);
+  --header-h: 56px;
   --radius: 4px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
