@@ -1,3 +1,4 @@
+import { NeonSign } from "@/components/NeonSign";
 import { site } from "@/content/site";
 import styles from "./landing.module.css";
 
@@ -31,9 +32,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <p className={`neon ${styles.footerMark}`} aria-hidden>
-        EverTold
-      </p>
+      <NeonSign className={styles.footerMark}>EverTold</NeonSign>
       <div className={styles.footerBase}>
         <span>© 2026 EverTold Studio</span>
         <span>We make wedding websites</span>
