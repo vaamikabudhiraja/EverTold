@@ -7,6 +7,7 @@ import type { Wedding } from "./types";
  */
 export const anayaAndKabir: Wedding = {
   slug: "anaya-and-kabir",
+  sample: true,
   couple: { first: "Anaya", second: "Kabir", hashtag: "#AnayaAndKabir" },
   tagline: "Three days, one beach, everyone we love.",
   date: "2027-02-14",

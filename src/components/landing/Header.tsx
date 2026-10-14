@@ -7,11 +7,12 @@ import { site } from "@/content/site";
 import styles from "./landing.module.css";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#concierge", label: "Concierge" },
-  { href: "#demo", label: "Demo" },
-  { href: "#process", label: "Process" },
-  { href: "#inquire", label: "Inquire" },
+  { href: "#services", label: "What we make" },
+  { href: "#demo", label: "Example" },
+  { href: "#process", label: "How it works" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#inquire", label: "Contact" },
 ];
 
 export function Header() {
@@ -33,7 +34,7 @@ export function Header() {
         <Link href="/" className={styles.brand}>
           EverTold <span>Studio</span>
         </Link>
-        <p className={styles.headerMeta}>Wedding websites, est. 2026</p>
+        <p className={styles.headerMeta}>A wedding website studio</p>
         <a className={styles.headerMeta} href={`mailto:${site.email}`}>
           Inquiries — {site.email}
         </a>

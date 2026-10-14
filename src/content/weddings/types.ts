@@ -51,6 +51,8 @@ export type Faq = {
 
 export type Wedding = {
   slug: string;
+  /** A sample site shown to prospective clients rather than a real couple's. */
+  sample?: boolean;
   couple: { first: string; second: string; hashtag?: string };
   tagline: string;
   date: string;

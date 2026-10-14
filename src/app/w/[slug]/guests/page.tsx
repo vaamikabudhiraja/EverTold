@@ -56,7 +56,9 @@ async function GuestList({ params, searchParams }: Pick<Props, "params" | "searc
     <main className={styles.page}>
       <header className={styles.head}>
         <div>
-          <p className="eyebrow">Wedding vault · {names}</p>
+          <p className="eyebrow">
+            {wedding.sample ? "Example dashboard" : "Wedding vault"} · {names}
+          </p>
           <h1 className="display">Guest list</h1>
         </div>
         <div className={styles.headActions}>

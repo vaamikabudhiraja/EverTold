@@ -99,10 +99,10 @@ export function Services() {
     <section className={styles.services} ref={root} id="services" aria-labelledby="services-title">
       <div className={styles.servicesHead}>
         <h2 id="services-title" className={styles.servicesTitle}>
-          What we build
+          What we make
         </h2>
-        <p>From the first save-the-date to the last dance — and long after it.</p>
-        <span className="eyebrow">(03) — 01 / 06</span>
+        <p>Every EverTold website is designed from scratch for one couple. Here&apos;s what can go into yours.</p>
+        <span className="eyebrow">(02) — 01 / 06</span>
       </div>
       <div className={styles.track} data-track>
         {cards.map((c, i) => (

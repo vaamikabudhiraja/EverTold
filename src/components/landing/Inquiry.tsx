@@ -45,9 +45,9 @@ export function Inquiry() {
   return (
     <section className={styles.inquiry} id="inquire" aria-labelledby="inquire-title">
       <div className={styles.inquiryHead}>
-        <p className="eyebrow">(08) — Inquire</p>
+        <p className="eyebrow">(09) — Get in touch</p>
         <h2 id="inquire-title" className={`display ${styles.inquiryTitle}`}>
-          Let&apos;s tell
+          Let&apos;s make
           <br />
           yours.
         </h2>

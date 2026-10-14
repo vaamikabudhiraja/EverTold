@@ -37,9 +37,9 @@ const packages = [
 
 export function Packages() {
   return (
-    <section className={styles.packages} aria-labelledby="packages-title">
+    <section className={styles.packages} id="pricing" aria-labelledby="packages-title">
       <div className={styles.packagesHead}>
-        <p className="eyebrow">(07) — Packages</p>
+        <p className="eyebrow">(07) — Packages & pricing</p>
         <h2 id="packages-title" className={`display ${styles.packagesTitle}`}>
           Pick your chapter
         </h2>
@@ -56,7 +56,7 @@ export function Packages() {
               ))}
             </ul>
             <a href="#inquire" className={styles.packageCta}>
-              Enquire for pricing
+              Ask for pricing
             </a>
           </article>
         ))}

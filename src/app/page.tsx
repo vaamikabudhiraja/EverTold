@@ -1,6 +1,7 @@
 import { ColorStory } from "@/components/landing/ColorStory";
 import { ConciergeSection } from "@/components/landing/ConciergeSection";
 import { DemoShowcase } from "@/components/landing/DemoShowcase";
+import { Faq } from "@/components/landing/Faq";
 import { Footer } from "@/components/landing/Footer";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
@@ -23,10 +24,10 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Manifesto />
+        <Services />
         <Scatter />
         <OneLink />
         <ColorStory />
-        <Services />
         <ConciergeSection />
         <DemoShowcase
           slug={demo.slug}
@@ -37,6 +38,7 @@ export default function Home() {
         />
         <Process />
         <Packages />
+        <Faq />
         <Inquiry />
       </main>
       <Footer />

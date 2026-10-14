@@ -62,7 +62,7 @@ export function OneLink() {
           Every answer.
         </h2>
         <div className={styles.onelinkIntro}>
-          <p className="eyebrow">(02) — The whole wedding</p>
+          <p className="eyebrow">(03) — For your guests</p>
           <p>
             Save-the-dates, schedules, maps, dress codes, RSVPs — and the questions that would otherwise flood your
             group chat. Gathered into one place your guests actually enjoy visiting.

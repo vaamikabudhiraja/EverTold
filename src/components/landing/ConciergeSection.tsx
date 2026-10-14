@@ -16,7 +16,7 @@ export function ConciergeSection() {
   return (
     <section className={styles.concierge} id="concierge" aria-labelledby="concierge-title">
       <div className={styles.conciergeCopy}>
-        <p className="eyebrow">(04) — AI concierge</p>
+        <p className="eyebrow">(04) — Try the AI concierge</p>
         <h2 id="concierge-title" className={`display ${styles.conciergeTitle}`}>
           Ask it
           <br />
@@ -24,7 +24,7 @@ export function ConciergeSection() {
         </h2>
         <p className={styles.conciergeLede}>
           Every EverTold site can come with a concierge that has read every detail of your wedding — and nothing else.
-          Try the one we built for our demo couple, {names}.
+          Try the one from our example site for {names}.
         </p>
         <ul className={styles.ticks}>
           <li>Answers only from your wedding details</li>

@@ -20,7 +20,7 @@ type Panel = {
 
 const panels: Panel[] = [
   {
-    eyebrow: "The language of yes",
+    eyebrow: "RSVPs",
     lines: [
       [{ photo: photos.noodles }, "If they're coming"],
       ["you'll know", { film: true }],
@@ -31,7 +31,7 @@ const panels: Panel[] = [
     ink: "var(--ink)",
   },
   {
-    eyebrow: "The language of where?",
+    eyebrow: "AI concierge",
     lines: [
       [{ photo: photos.spaghetti }, "If they're lost"],
       ["the concierge", { photo: photos.doorstep }],
@@ -42,7 +42,7 @@ const panels: Panel[] = [
     ink: "var(--ink)",
   },
   {
-    eyebrow: "The language of always",
+    eyebrow: "Live updates",
     lines: [
       [{ photo: photos.piggyback }, "If plans change"],
       ["every guest", { photo: photos.noodles }],
@@ -95,7 +95,7 @@ export function ColorStory() {
   );
 
   return (
-    <section className={styles.colorStory} ref={root} aria-label="What an EverTold site does">
+    <section className={styles.colorStory} ref={root} aria-label="What your website does">
       {panels.map((p) => (
         <div key={p.eyebrow} className={styles.panel} style={{ background: p.bg, color: p.ink }} data-panel>
           <div className={styles.panelInner}>

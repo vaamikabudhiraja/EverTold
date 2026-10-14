@@ -20,7 +20,7 @@ const steps = [
   },
   {
     title: "Launch & guest care",
-    body: "Share one link. RSVPs flow in, questions get answered, and we keep everything current until the last song — and after.",
+    body: "Share one link. RSVPs flow in, the concierge answers questions, and the site stays current right up to the last song.",
   },
 ];
 
@@ -58,10 +58,10 @@ export function Process() {
         <h2 id="process-title" className={styles.processTitle}>
           How it
           <br />
-          comes together
+          works
         </h2>
         <p>
-          Discovery to launch in four unhurried steps — then we stay on call, so every guest question has an answer.
+          From the first chat to launch day in four steps — and your site keeps working for your guests from then on.
         </p>
         <span className="eyebrow">(06) — 01 / 04</span>
       </div>

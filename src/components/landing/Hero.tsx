@@ -1,12 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 
 import { heroFilm } from "@/content/media";
+import { DEMO_SLUG } from "@/content/weddings";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
-
-const services = ["Story sites", "RSVP & guest list", "AI concierge", "Wedding vault"];
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -37,38 +37,39 @@ export function Hero() {
       <div className={styles.heroShade} aria-hidden />
 
       <div className={styles.heroInner}>
-        <p className={`eyebrow ${styles.heroKicker}`}>Wedding websites · RSVP · AI concierge</p>
+        <p className={`eyebrow ${styles.heroKicker}`}>EverTold — a wedding website studio</p>
 
-        <div className={styles.heroMarkWrap} data-hero-mark>
-          <h1 id="hero-title" className={styles.wordmark} aria-label="EverTold">
+        <div className={styles.heroMarkWrap} data-hero-mark aria-hidden>
+          <div className={styles.wordmark}>
             {"EVERTOLD".split("").map((ch, i) => (
-              <span key={i} className={styles.letterMask} aria-hidden>
+              <span key={i} className={styles.letterMask}>
                 <span className={styles.letter} style={{ "--i": i } as React.CSSProperties}>
                   {ch}
                 </span>
               </span>
             ))}
-          </h1>
-          <ul className={styles.heroServices}>
-            {services.map((s, i) => (
-              <li key={s}>
-                <span>0{i + 1}</span>
-                {s}
-              </li>
-            ))}
-          </ul>
+          </div>
         </div>
 
         <div data-hero-foot>
           <div className={styles.heroFoot}>
-            <p className={styles.heroLede}>
-              A studio crafting immersive wedding websites — one link for your story, every event, every RSVP and every
-              question your guests will ask.
-            </p>
-            <a href="#inquire" className={styles.pill}>
-              Plan your site
-            </a>
-            <span className={`eyebrow ${styles.scrollCue}`}>(Scroll down)</span>
+            <div className={styles.heroPitch}>
+              <h1 id="hero-title" className={styles.heroTitle}>
+                <span className="visually-hidden">EverTold — </span>We make wedding websites.
+              </h1>
+              <p className={styles.heroLede}>
+                Custom-designed for each couple — your story, every event, RSVPs and an AI concierge that answers your
+                guests&apos; questions. All at one beautiful link.
+              </p>
+            </div>
+            <div className={styles.heroCtas}>
+              <a href="#inquire" className={styles.pill}>
+                Start your website
+              </a>
+              <Link href={`/w/${DEMO_SLUG}`} className={styles.pillGhost}>
+                See an example ↗
+              </Link>
+            </div>
           </div>
         </div>
       </div>

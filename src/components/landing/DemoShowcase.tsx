@@ -43,23 +43,27 @@ export function DemoShowcase({ slug, names, dateLabel, place, eventCount }: Prop
   return (
     <section className={styles.showcase} ref={root} id="demo" aria-labelledby="demo-title">
       <div className={styles.showcaseHead}>
-        <h2 id="demo-title" className={styles.showcaseTitle}>
-          Step inside
-          <br />a wedding
-        </h2>
+        <div className={styles.showcaseIntro}>
+          <p className="eyebrow">(05) — Our work</p>
+          <h2 id="demo-title" className={styles.showcaseTitle}>
+            See an
+            <br />
+            example
+          </h2>
+        </div>
         <p>
-          A complete EverTold site for a fictional couple — five events across three days, per-event RSVPs, travel and
-          stays, and a concierge you can talk to.
+          We made this sample website for a fictional couple so you can click through exactly what your guests would get
+          — their story, five events, travel, RSVPs and a concierge you can talk to.
         </p>
         <Link href={`/w/${slug}`} className={styles.textLink}>
-          Open the demo ↗
+          Open the example ↗
         </Link>
       </div>
 
       <Link
         href={`/w/${slug}`}
         className={styles.showcaseStage}
-        aria-label={`Open the demo wedding site for ${names[0]} and ${names[1]}`}
+        aria-label={`Open the example wedding website for ${names[0]} and ${names[1]}`}
       >
         <div className={styles.showcaseBg} data-showcase-bg aria-hidden>
           <video autoPlay muted loop playsInline poster={heroFilm.poster}>
@@ -91,7 +95,7 @@ export function DemoShowcase({ slug, names, dateLabel, place, eventCount }: Prop
             {names[0]} &amp; {names[1]}
           </p>
           <p className="eyebrow">
-            {place} · {eventCount} events · RSVP · Concierge
+            Sample site · {place} · {eventCount} events · RSVP · Concierge
           </p>
         </div>
         <span className={`eyebrow ${styles.showcaseCta}`}>View site ↗</span>

@@ -1159,3 +1159,43 @@
     border-radius: 18px 18px 0 0;
   }
 }
+
+/* ───────── Sample-site badge ───────── */
+
+.sampleBadge {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: grid;
+  gap: 2px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: var(--ivory);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.3;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.sampleBadge span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.sampleBadge:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 599px) {
+  .sampleBadge {
+    left: 12px;
+    bottom: auto;
+    top: 72px;
+    padding: 8px 12px;
+  }
+}

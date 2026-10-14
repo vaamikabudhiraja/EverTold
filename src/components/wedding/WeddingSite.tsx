@@ -292,6 +292,12 @@ export function WeddingSite({ wedding: w }: { wedding: Wedding }) {
         </Link>
       </footer>
 
+      {w.sample && (
+        <Link href="/#inquire" className={styles.sampleBadge}>
+          <span>Example site by EverTold</span>
+          <strong>Get one for your wedding →</strong>
+        </Link>
+      )}
       <ConciergeWidget slug={w.slug} coupleNames={names} suggestions={suggestions} />
       <Reveals />
     </div>

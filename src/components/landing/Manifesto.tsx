@@ -46,8 +46,8 @@ export function Manifesto() {
   );
 
   return (
-    <section className={styles.manifesto} ref={root} aria-label="About the studio">
-      <p className={`eyebrow ${styles.sectionIndex}`}>(01) — The studio</p>
+    <section className={styles.manifesto} ref={root} aria-label="About EverTold">
+      <p className={`eyebrow ${styles.sectionIndex}`}>(01) — About EverTold</p>
       <p className={styles.statement} data-statement>
         {statement.split(" ").map((w, i) => (
           <span key={i} data-word>
@@ -68,7 +68,7 @@ export function Manifesto() {
         <figure className={styles.manifestoFig}>
           <figcaption className="eyebrow">
             <span>Every couple tells it differently</span>
-            <a href="#demo">See a demo</a>
+            <a href="#demo">See an example</a>
           </figcaption>
           <div className={styles.manifestoImg} data-fig>
             <Image src={photos.piggyback.src} alt={photos.piggyback.alt} fill sizes="(min-width: 900px) 40vw, 100vw" />

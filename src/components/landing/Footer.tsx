@@ -15,15 +15,15 @@ export function Footer() {
         </p>
         <div className={styles.footerCols}>
           <div>
-            <p className="eyebrow">Studio</p>
-            <a href="#services">Services</a>
-            <a href="#concierge">Concierge</a>
-            <a href="#process">Process</a>
+            <p className="eyebrow">EverTold</p>
+            <a href="#services">What we make</a>
+            <a href="#process">How it works</a>
+            <a href="#pricing">Pricing</a>
           </div>
           <div>
             <p className="eyebrow">See it</p>
-            <Link href={`/w/${DEMO_SLUG}`}>Demo wedding</Link>
-            <a href="#inquire">Inquire</a>
+            <Link href={`/w/${DEMO_SLUG}`}>Example website</Link>
+            <a href="#concierge">Try the concierge</a>
           </div>
           <div>
             <p className="eyebrow">Say hello</p>
@@ -39,7 +39,7 @@ export function Footer() {
       </p>
       <div className={styles.footerBase}>
         <span>© 2026 EverTold Studio</span>
-        <span>Wedding websites, RSVPs & AI concierges</span>
+        <span>We make wedding websites</span>
       </div>
     </footer>
   );
