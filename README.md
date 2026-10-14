@@ -31,7 +31,7 @@ Other scripts: `npm run build`, `npm start`, `npm run lint`.
 
 - **Services, packages, process steps and FAQs:** `src/content/studio.ts`. The page sections render from this file and the concierge answers from it, so one edit updates both.
 - **Email, Instagram and the one-line description:** `src/content/site.ts`.
-- **Landing film:** `public/media/hero-beach.{mp4,webm}` with `hero-beach-poster.jpg`. Run `scripts/encode-film.sh your-clip.mp4` (needs ffmpeg) to produce a seamless, muted loop in all three formats.
+- **Landing film:** `public/media/hero-beach.{mp4,webm}` with `hero-beach-poster.jpg`. Run `scripts/encode-film.sh your-clip.mp4 hero-beach` (needs ffmpeg) to produce a muted loop in all three formats; add `cut` as a third argument when the camera moves, so the loop restarts cleanly instead of crossfading.
 - **Photos:** drop files into `public/photos/` and update `src/content/media.ts`. The current photos are stand-ins cropped from the hero film; keep the same file names to replace them in place.
 
 ## Before going live
