@@ -2,27 +2,9 @@
 
 import { useRef } from "react";
 
+import { steps } from "@/content/studio";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
-
-const steps = [
-  {
-    title: "Discovery call",
-    body: "We learn your story, your weekend and your guests. Bring the mood board — we'll bring the questions.",
-  },
-  {
-    title: "Your story, gathered",
-    body: "One simple questionnaire becomes your Wedding Vault: events, venues, travel, FAQs and photos. We do the chasing.",
-  },
-  {
-    title: "Design & build",
-    body: "A site that feels like your wedding — your palette, your type, your rhythm — with a concierge trained on every detail.",
-  },
-  {
-    title: "Launch & guest care",
-    body: "Share one link. RSVPs flow in, the concierge answers questions, and the site stays current right up to the last song.",
-  },
-];
 
 export function Process() {
   const root = useRef<HTMLElement>(null);
@@ -63,7 +45,7 @@ export function Process() {
         <p>
           From the first chat to launch day in four steps — and your site keeps working for your guests from then on.
         </p>
-        <span className="eyebrow">(06) — 01 / 04</span>
+        <span className="eyebrow">(05) — 01 / 04</span>
       </div>
 
       <ol className={styles.steps} data-steps>

@@ -18,23 +18,6 @@
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
-.light {
-  --c-bg: #fffaf3;
-  --c-panel: #f1e8db;
-  --c-text: var(--ink);
-  --c-muted: var(--muted-light);
-  --c-line: var(--line-light);
-  --c-user: var(--ink);
-  --c-user-ink: var(--ivory);
-}
-
-.compact {
-  height: 100%;
-  border-radius: 0;
-  border: 0;
-  box-shadow: none;
-}
-
 .head {
   display: flex;
   align-items: center;

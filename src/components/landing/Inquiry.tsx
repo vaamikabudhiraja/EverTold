@@ -45,7 +45,7 @@ export function Inquiry() {
   return (
     <section className={styles.inquiry} id="inquire" aria-labelledby="inquire-title">
       <div className={styles.inquiryHead}>
-        <p className="eyebrow">(09) — Get in touch</p>
+        <p className="eyebrow">(08) — Get in touch</p>
         <h2 id="inquire-title" className={`display ${styles.inquiryTitle}`}>
           Let&apos;s make
           <br />
@@ -72,7 +72,7 @@ export function Inquiry() {
         >
           <label className={styles.field}>
             <span>Your names</span>
-            <input name="names" required minLength={2} placeholder="Anaya & Kabir" autoComplete="name" />
+            <input name="names" required minLength={2} placeholder="Maya & Jordan" autoComplete="name" />
           </label>
           <label className={styles.field}>
             <span>Email</span>

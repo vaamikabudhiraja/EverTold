@@ -1,6 +1,3 @@
-import Link from "next/link";
-
-import { DEMO_SLUG } from "@/content/weddings";
 import { site } from "@/content/site";
 import styles from "./landing.module.css";
 
@@ -21,9 +18,9 @@ export function Footer() {
             <a href="#pricing">Pricing</a>
           </div>
           <div>
-            <p className="eyebrow">See it</p>
-            <Link href={`/w/${DEMO_SLUG}`}>Example website</Link>
-            <a href="#concierge">Try the concierge</a>
+            <p className="eyebrow">Talk to us</p>
+            <a href="#concierge">Ask the concierge</a>
+            <a href="#inquire">Start your website</a>
           </div>
           <div>
             <p className="eyebrow">Say hello</p>

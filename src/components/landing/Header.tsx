@@ -8,7 +8,7 @@ import styles from "./landing.module.css";
 
 const links = [
   { href: "#services", label: "What we make" },
-  { href: "#demo", label: "Example" },
+  { href: "#concierge", label: "Concierge" },
   { href: "#process", label: "How it works" },
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },

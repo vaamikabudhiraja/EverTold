@@ -4,7 +4,7 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 /**
- * Tiny JSON-file store for RSVPs and inquiries.
+ * Tiny JSON-file store for inquiries from the contact form.
  *
  * Fine for a single server or local development. On serverless hosts the
  * filesystem is ephemeral, so point EVERTOLD_DATA_DIR at a mounted volume or

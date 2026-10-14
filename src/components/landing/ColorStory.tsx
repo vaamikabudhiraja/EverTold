@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { Fragment, useRef } from "react";
 
-import { heroFilm, photos } from "@/content/media";
-import type { Photo } from "@/content/weddings/types";
+import { heroFilm, photos, type Photo } from "@/content/media";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
 

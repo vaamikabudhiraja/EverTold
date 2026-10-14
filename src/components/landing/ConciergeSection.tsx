@@ -1,18 +1,14 @@
 import { ConciergeChat } from "@/components/concierge/ConciergeChat";
-import { DEMO_SLUG, getWedding } from "@/content/weddings";
 import styles from "./landing.module.css";
 
 const suggestions = [
-  "What should I wear to the Sangeet?",
-  "Which airport should I fly into?",
-  "Can I bring my kids?",
-  "Where should I stay?",
+  "What do we get with a wedding website?",
+  "How does the AI concierge work for our guests?",
+  "What's in The Full Story package?",
+  "How do we get started?",
 ];
 
 export function ConciergeSection() {
-  const demo = getWedding(DEMO_SLUG)!;
-  const names = `${demo.couple.first} & ${demo.couple.second}`;
-
   return (
     <section className={styles.concierge} id="concierge" aria-labelledby="concierge-title">
       <div className={styles.conciergeCopy}>
@@ -23,8 +19,8 @@ export function ConciergeSection() {
           anything.
         </h2>
         <p className={styles.conciergeLede}>
-          Every EverTold site can come with a concierge that has read every detail of your wedding — and nothing else.
-          Try the one from our example site for {names}.
+          Every website we make can come with a concierge that knows your wedding inside out and answers your guests day
+          and night. This one knows EverTold — go ahead, ask it about us.
         </p>
         <ul className={styles.ticks}>
           <li>Answers only from your wedding details</li>
@@ -33,7 +29,7 @@ export function ConciergeSection() {
         </ul>
       </div>
       <div className={styles.conciergeChat}>
-        <ConciergeChat slug={DEMO_SLUG} coupleNames={names} suggestions={suggestions} />
+        <ConciergeChat suggestions={suggestions} />
       </div>
     </section>
   );

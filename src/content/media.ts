@@ -1,4 +1,9 @@
-import type { Photo } from "./weddings/types";
+export type Photo = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
 
 /**
  * Site-wide media. Swap a file in /public and its entry here, and every

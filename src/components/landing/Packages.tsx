@@ -1,45 +1,11 @@
+import { packages } from "@/content/studio";
 import styles from "./landing.module.css";
-
-const packages = [
-  {
-    name: "The Save the Date",
-    summary: "One beautiful page to announce the date and start the countdown.",
-    items: [
-      "Custom one-page design",
-      "Date, place & live countdown",
-      "Guest address & email collection",
-      "Add-to-calendar for guests",
-    ],
-  },
-  {
-    name: "The Celebration",
-    summary: "Your full wedding website with per-event RSVPs.",
-    items: [
-      "Everything in The Save the Date",
-      "Story, schedule, travel & FAQs",
-      "Per-event RSVPs & guest list export",
-      "Maps, dress codes & hotel blocks",
-    ],
-  },
-  {
-    name: "The Full Story",
-    summary: "The complete immersive experience, with your own AI concierge.",
-    items: [
-      "Everything in The Celebration",
-      "Scroll-told, cinematic design",
-      "AI concierge trained on your wedding",
-      "Wedding Vault for every detail",
-      "Post-wedding gallery & keepsake",
-    ],
-    featured: true,
-  },
-];
 
 export function Packages() {
   return (
     <section className={styles.packages} id="pricing" aria-labelledby="packages-title">
       <div className={styles.packagesHead}>
-        <p className="eyebrow">(07) — Packages & pricing</p>
+        <p className="eyebrow">(06) — Packages & pricing</p>
         <h2 id="packages-title" className={`display ${styles.packagesTitle}`}>
           Pick your chapter
         </h2>

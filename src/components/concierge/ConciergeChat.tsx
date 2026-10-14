@@ -6,16 +6,10 @@ import styles from "./chat.module.css";
 
 type Message = { role: "user" | "assistant"; content: string };
 
-type Props = {
-  slug: string;
-  coupleNames: string;
-  suggestions: string[];
-  tone?: "dark" | "light";
-  greeting?: string;
-  compact?: boolean;
-};
+const GREETING =
+  "Hi! I'm EverTold's concierge — the same kind we build into couples' wedding websites. Ask me anything about what we make, our packages or how it works.";
 
-export function ConciergeChat({ slug, coupleNames, suggestions, tone = "dark", greeting, compact }: Props) {
+export function ConciergeChat({ suggestions }: { suggestions: string[] }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
@@ -47,7 +41,7 @@ export function ConciergeChat({ slug, coupleNames, suggestions, tone = "dark", g
       const res = await fetch("/api/concierge", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ slug, messages: history }),
+        body: JSON.stringify({ messages: history }),
       });
       if (!res.body) throw new Error("No response body");
       const reader = res.body.getReader();
@@ -67,20 +61,17 @@ export function ConciergeChat({ slug, coupleNames, suggestions, tone = "dark", g
   const showSuggestions = messages.length === 0;
 
   return (
-    <div className={`${styles.chat} ${tone === "light" ? styles.light : ""} ${compact ? styles.compact : ""}`}>
+    <div className={styles.chat}>
       <div className={styles.head}>
         <span className={styles.dot} aria-hidden />
         <div>
-          <p className={styles.title}>Concierge</p>
-          <p className={styles.sub}>{coupleNames} · answers from the wedding details</p>
+          <p className={styles.title}>EverTold concierge</p>
+          <p className={styles.sub}>Answers from everything on this site</p>
         </div>
       </div>
 
       <div className={styles.log} ref={logRef} aria-live="polite" data-lenis-prevent>
-        <p className={`${styles.bubble} ${styles.assistant}`}>
-          {greeting ??
-            `Hello! I know everything about ${coupleNames}'s wedding — times, places, dress codes, travel. What can I help with?`}
-        </p>
+        <p className={`${styles.bubble} ${styles.assistant}`}>{GREETING}</p>
         {messages.map((m, i) => (
           <p key={i} className={`${styles.bubble} ${m.role === "user" ? styles.user : styles.assistant}`}>
             {m.content || <span className={styles.typing} aria-label="Concierge is typing" />}
@@ -112,7 +103,7 @@ export function ConciergeChat({ slug, coupleNames, suggestions, tone = "dark", g
           className={styles.input}
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
-          placeholder="Ask about times, dress codes, hotels…"
+          placeholder="Ask about packages, the process, the concierge…"
           maxLength={500}
           autoComplete="off"
         />

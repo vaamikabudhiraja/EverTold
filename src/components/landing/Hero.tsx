@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useRef } from "react";
 
 import { heroFilm } from "@/content/media";
-import { DEMO_SLUG } from "@/content/weddings";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
 
@@ -66,9 +64,9 @@ export function Hero() {
               <a href="#inquire" className={styles.pill}>
                 Start your website
               </a>
-              <Link href={`/w/${DEMO_SLUG}`} className={styles.pillGhost}>
-                See an example ↗
-              </Link>
+              <a href="#concierge" className={styles.pillGhost}>
+                Ask our concierge
+              </a>
             </div>
           </div>
         </div>
