@@ -12,8 +12,17 @@ export function Reveals() {
       ScrollTrigger.batch(items, {
         start: "top 88%",
         once: true,
+        // Jumping down the page (anchor links) enters many elements at once; cap the
+        // total stagger so the ones in view don't wait behind those scrolled past.
         onEnter: (batch) =>
-          gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out", overwrite: true }),
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            stagger: { amount: Math.min(0.4, batch.length * 0.1) },
+            duration: 1,
+            ease: "power3.out",
+            overwrite: true,
+          }),
       });
     });
   });
