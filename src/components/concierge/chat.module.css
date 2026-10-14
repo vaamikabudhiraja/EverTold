@@ -1,10 +1,10 @@
 .chat {
-  --c-bg: #17141a;
-  --c-panel: #221e26;
+  --c-bg: var(--ink-2);
+  --c-panel: var(--ink-3);
   --c-text: var(--ivory);
   --c-muted: var(--muted-dark);
   --c-line: var(--line-dark);
-  --c-user: var(--gold);
+  --c-user: var(--amber);
   --c-user-ink: var(--ink);
 
   display: flex;
@@ -30,8 +30,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #6fcf8e;
-  box-shadow: 0 0 0 4px rgba(111, 207, 142, 0.18);
+  background: var(--neon);
+  box-shadow: 0 0 10px var(--neon);
   flex: none;
 }
 
@@ -148,8 +148,8 @@
   height: 46px;
   border-radius: 50%;
   border: 0;
-  background: var(--coral);
-  color: var(--ink);
+  background: var(--red);
+  color: var(--ivory);
   display: grid;
   place-items: center;
   transition:

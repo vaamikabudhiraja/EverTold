@@ -6,10 +6,22 @@ import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
 
 const chips = [
-  { label: "RSVP", text: "Every reply, counted live", color: "var(--coral)", width: "78%" },
-  { label: "Schedule", text: "Every event, one timeline", color: "var(--gold)", width: "62%" },
-  { label: "Concierge", text: "Every question, answered 24/7", color: "var(--lilac)", width: "92%" },
-  { label: "Updates", text: "Every change, shared instantly", color: "var(--teal)", width: "70%" },
+  { label: "RSVP", text: "Every reply, counted live", color: "var(--red)", ink: "var(--ivory)", width: "78%" },
+  { label: "Schedule", text: "Every event, one timeline", color: "var(--amber)", ink: "var(--ink)", width: "62%" },
+  {
+    label: "Concierge",
+    text: "Every question, answered 24/7",
+    color: "var(--jade)",
+    ink: "var(--ivory)",
+    width: "92%",
+  },
+  {
+    label: "Updates",
+    text: "Every change, shared instantly",
+    color: "var(--oxblood)",
+    ink: "var(--ivory)",
+    width: "70%",
+  },
 ];
 
 const stats = [
@@ -75,7 +87,7 @@ export function OneLink() {
           {chips.map((c) => (
             <div key={c.label} className={styles.chipRow}>
               <p className="eyebrow">{c.label}</p>
-              <span className={styles.chip} style={{ background: c.color, width: c.width }} data-chip>
+              <span className={styles.chip} style={{ background: c.color, color: c.ink, width: c.width }} data-chip>
                 <span data-chip-text>{c.text}</span>
               </span>
             </div>

@@ -8,7 +8,7 @@
 # cut:            loops the clip as-is. Use when the camera moves, where a
 #                 crossfade would show a double exposure.
 set -euo pipefail
-in="$1"; name="${2:-hero-beach}"; mode="${3:-fade}"; out="public/media"
+in="$1"; name="${2:-hero-film}"; mode="${3:-fade}"; out="public/media"
 dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$in")
 fade=1
 if [ "$mode" = "fade" ]; then

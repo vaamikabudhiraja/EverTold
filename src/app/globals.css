@@ -1,21 +1,24 @@
-/* EverTold — design tokens pulled from the golden-hour beach film. */
+/* EverTold — design tokens pulled from the neon noodle-bar film:
+   olive-black shadows, a red neon sign, lacquer-red posters, bottle green,
+   oxblood leather and the warm cream of the dress and steam. */
 :root {
-  --ink: #0e0c10;
-  --ink-2: #17141a;
-  --ink-3: #221e26;
-  --ivory: #f4ede3;
-  --sand: #e9dcc9;
-  --paper: #f7f2ea;
-  --gold: #e2a857;
-  --coral: #e8714f;
-  --lilac: #8f86c4;
-  --teal: #2f7c7d;
-  --plum: #5b3150;
+  --ink: #0d0e09;
+  --ink-2: #16170f;
+  --ink-3: #211f16;
+  --ivory: #efe3c8;
+  --sand: #ded0b2;
+  --paper: #e9dcc0;
+  --neon: #ff5a4a;
+  --neon-glow: rgba(227, 39, 31, 0.75);
+  --red: #a3231c;
+  --oxblood: #5c1915;
+  --jade: #24361a;
+  --amber: #e8a868;
 
-  --line-dark: rgba(244, 237, 227, 0.14);
-  --line-light: rgba(14, 12, 16, 0.14);
-  --muted-dark: rgba(244, 237, 227, 0.6);
-  --muted-light: rgba(14, 12, 16, 0.62);
+  --line-dark: rgba(239, 227, 200, 0.14);
+  --line-light: rgba(13, 14, 9, 0.16);
+  --muted-dark: rgba(239, 227, 200, 0.62);
+  --muted-light: rgba(13, 14, 9, 0.66);
 
   --font-display-stack: var(--font-display), "Oswald", "Impact", sans-serif;
   --font-serif-stack: var(--font-serif), "Times New Roman", serif;
@@ -82,12 +85,12 @@ p {
 }
 
 ::selection {
-  background: var(--coral);
-  color: var(--ink);
+  background: var(--red);
+  color: var(--ivory);
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--amber);
   outline-offset: 3px;
 }
 
@@ -113,8 +116,59 @@ body::after {
   inset: -50%;
   z-index: 100;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.08;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Neon sign lettering, like the OPEN sign in the film: a hot core, a red
+   halo, a stuttering switch-on and the odd flicker after that. */
+.neon {
+  color: #ffe3d8;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.6),
+    0 0 8px var(--neon),
+    0 0 18px var(--neon),
+    0 0 38px var(--neon-glow),
+    0 0 80px var(--neon-glow);
+  animation:
+    neon-on 1.4s steps(1, end) 0.5s both,
+    neon-flicker 7s linear 2.4s infinite;
+}
+
+@keyframes neon-on {
+  0% {
+    opacity: 0.08;
+  }
+  12% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0.35;
+  }
+  46%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes neon-flicker {
+  0%,
+  90%,
+  92%,
+  95%,
+  100% {
+    opacity: 1;
+  }
+  91%,
+  94% {
+    opacity: 0.4;
+  }
 }
 
 /* Shared type */

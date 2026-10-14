@@ -26,8 +26,8 @@ const panels: Panel[] = [
       [{ photo: photos.kiss }, "the second they say yes"],
     ],
     note: "Per-event RSVPs land in a live guest list — headcounts, plus-ones and dietary notes included.",
-    bg: "var(--coral)",
-    ink: "var(--ink)",
+    bg: "var(--red)",
+    ink: "var(--ivory)",
   },
   {
     eyebrow: "AI concierge",
@@ -37,8 +37,8 @@ const panels: Panel[] = [
       [{ film: true }, "will find them"],
     ],
     note: "An AI concierge that has read every detail of your wedding — and answers at 2am, in your tone.",
-    bg: "var(--lilac)",
-    ink: "var(--ink)",
+    bg: "var(--jade)",
+    ink: "var(--ivory)",
   },
   {
     eyebrow: "Live updates",
@@ -48,7 +48,7 @@ const panels: Panel[] = [
       [{ photo: photos.kiss }, "hears it first"],
     ],
     note: "Edit once. The site, the schedule and the concierge update together — no reprints, no reply-all.",
-    bg: "var(--teal)",
+    bg: "var(--oxblood)",
     ink: "var(--ivory)",
   },
 ];

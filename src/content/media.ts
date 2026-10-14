@@ -11,9 +11,9 @@ export type Photo = {
  */
 
 export const heroFilm = {
-  mp4: "/media/hero-beach.mp4",
-  webm: "/media/hero-beach.webm",
-  poster: "/media/hero-beach-poster.jpg",
+  mp4: "/media/hero-film.mp4",
+  webm: "/media/hero-film.webm",
+  poster: "/media/hero-film-poster.jpg",
 };
 
 export const photos = {
@@ -32,8 +32,8 @@ export const photos = {
   kiss: {
     src: "/photos/kiss.jpg",
     alt: "Couple kissing as their wedding party rushes past in a blur",
-    width: 900,
-    height: 1200,
+    width: 1200,
+    height: 1197,
   },
   spaghetti: {
     src: "/photos/spaghetti.jpg",

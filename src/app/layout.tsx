@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — Wedding websites your guests step into`,
     description: site.description,
-    images: ["/media/hero-beach-poster.jpg"],
+    images: ["/media/hero-film-poster.jpg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e0c10",
+  themeColor: "#0d0e09",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

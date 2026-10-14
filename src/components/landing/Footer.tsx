@@ -31,8 +31,8 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <p className={styles.footerMark} aria-hidden>
-        EVERTOLD
+      <p className={`neon ${styles.footerMark}`} aria-hidden>
+        EverTold
       </p>
       <div className={styles.footerBase}>
         <span>© 2026 EverTold Studio</span>
