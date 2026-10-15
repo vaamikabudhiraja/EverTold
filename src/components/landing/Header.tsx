@@ -17,6 +17,19 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  // Transparent over the opening film; solid once the next screen reaches the header.
+  const [overFilm, setOverFilm] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setOverFilm(window.scrollY < window.innerHeight - 60);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
@@ -26,7 +39,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${overFilm && !open ? styles.headerClear : ""}`}>
       <a href="#main" className="skip-link">
         Skip to content
       </a>

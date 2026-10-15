@@ -1,12 +1,25 @@
 /* ───────────────────────── Header ───────────────────────── */
 
-/* A solid bar, like the top of a cinema screen, so nothing blends with the film. */
+/* Sits clear over the opening film, then becomes a solid bar for the rest of
+   the page so it stays readable over every section. */
 .header {
   position: fixed;
   inset: 0 0 auto;
   z-index: 50;
   background: var(--ink);
   border-bottom: 1px solid var(--line-dark);
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.headerClear {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.headerClear .headerBar {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
 }
 
 .headerBar {
@@ -215,17 +228,16 @@ a.headerMeta:hover {
 
 /* ───────────────────────── Hero ───────────────────────── */
 
-/* The film fills the first screen under the header bar and stays pinned while
-   the pitch slides up over it on the first scroll. */
+/* The film fills the whole first screen, running up behind the clear header,
+   and stays pinned while the pitch slides up over it on the first scroll. */
 .heroWrap {
   position: relative;
-  padding-top: var(--header-h);
 }
 
 .hero {
   position: sticky;
-  top: var(--header-h);
-  height: calc(100svh - var(--header-h));
+  top: 0;
+  height: 100svh;
   min-height: 420px;
   overflow: hidden;
   background: var(--ink-2);
@@ -245,8 +257,9 @@ a.headerMeta:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Leans right so the neon OPEN sign stays in shot on laptop screens. */
-  object-position: 72% 50%;
+  /* Leans right so the neon OPEN sign stays in shot on laptop screens
+     without cropping the bride's face. */
+  object-position: 64% 50%;
 }
 
 @keyframes heroIn {
