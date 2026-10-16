@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { Fragment, useRef } from "react";
 
-import { heroFilm, photos, type Photo } from "@/content/media";
+import { photos, type Photo } from "@/content/media";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
 
-type Segment = string | { photo: Photo } | { film: true };
+type Segment = string | { photo: Photo };
 
 type Panel = {
   eyebrow: string;
@@ -22,7 +22,7 @@ const panels: Panel[] = [
     eyebrow: "RSVPs",
     lines: [
       [{ photo: photos.garden }, "If they're coming"],
-      ["you'll know", { film: true }],
+      ["you'll know", { photo: photos.elevator }],
       [{ photo: photos.diner }, "the second they say yes"],
     ],
     note: "Per-event RSVPs land in a live guest list — headcounts, plus-ones and dietary notes included.",
@@ -34,7 +34,7 @@ const panels: Panel[] = [
     lines: [
       [{ photo: photos.bar }, "If they're lost"],
       ["the concierge", { photo: photos.thankYou }],
-      [{ film: true }, "will find them"],
+      [{ photo: photos.curb }, "will find them"],
     ],
     note: "An AI concierge that has read every detail of your wedding — and answers at 2am, in your tone.",
     bg: "var(--jade)",
@@ -55,16 +55,6 @@ const panels: Panel[] = [
 
 function Inline({ segment }: { segment: Segment }) {
   if (typeof segment === "string") return <>{segment}</>;
-  if ("film" in segment) {
-    return (
-      <span className={styles.inlineMedia} aria-hidden>
-        <video autoPlay muted loop playsInline poster={heroFilm.poster}>
-          <source src={heroFilm.webm} type="video/webm" />
-          <source src={heroFilm.mp4} type="video/mp4" />
-        </video>
-      </span>
-    );
-  }
   return (
     <span className={styles.inlineMedia} aria-hidden>
       <Image src={segment.photo.src} alt="" fill sizes="20vw" />

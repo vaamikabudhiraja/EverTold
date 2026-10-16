@@ -18,8 +18,20 @@
   border-bottom-color: transparent;
 }
 
+/* A tight halo keeps the type readable as the film's sprocket holes pass under it. */
 .headerClear .headerBar {
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.9),
+    0 0 6px rgba(0, 0, 0, 0.6),
+    0 1px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* While the film rests on its pale lightbox, the clear header reads in ink. */
+:global(html[data-film-tone="light"]) .headerClear .headerBar {
+  color: var(--ink);
+  text-shadow:
+    0 0 1px rgba(253, 246, 232, 0.9),
+    0 0 8px rgba(253, 246, 232, 0.6);
 }
 
 .headerBar {
@@ -32,6 +44,9 @@
   font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--ivory);
+  transition:
+    color 0.5s ease,
+    text-shadow 0.5s ease;
 }
 
 .brand {
@@ -228,8 +243,9 @@ a.headerMeta:hover {
 
 /* ───────────────────────── Hero ───────────────────────── */
 
-/* The film fills the whole first screen, running up behind the clear header,
-   and stays pinned while the pitch slides up over it on the first scroll. */
+/* The film strip (FilmStrip.tsx) fills the whole first screen, running up
+   behind the clear header, and stays pinned while the pitch slides up over it
+   on the first scroll. */
 .heroWrap {
   position: relative;
 }
@@ -253,35 +269,9 @@ a.headerMeta:hover {
   animation: heroIn 1.2s ease-out both;
 }
 
-.heroMedia video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Leans right so the neon OPEN sign stays in shot on laptop screens
-     without cropping the bride's face. */
-  object-position: 64% 50%;
-}
-
 @keyframes heroIn {
   from {
     opacity: 0;
-  }
-}
-
-/* On tall, narrow screens the wide film can't show both of them at once, so
-   the frame drifts slowly between the bride and the groom. */
-@media (max-aspect-ratio: 1 / 1) {
-  .heroMedia video {
-    animation: heroPan 14s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes heroPan {
-  from {
-    object-position: 26% 50%;
-  }
-  to {
-    object-position: 66% 50%;
   }
 }
 
@@ -766,8 +756,7 @@ a.headerMeta:hover {
   background: rgba(0, 0, 0, 0.15);
 }
 
-.inlineMedia img,
-.inlineMedia video {
+.inlineMedia img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -857,8 +846,7 @@ a.headerMeta:hover {
   background: var(--ink-3);
 }
 
-.cardMedia img,
-.cardMedia video {
+.cardMedia img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -871,8 +859,7 @@ a.headerMeta:hover {
     transform 1.2s var(--ease-out);
 }
 
-.card:hover .cardMedia img,
-.card:hover .cardMedia video {
+.card:hover .cardMedia img {
   filter: none;
   transform: scale(1);
 }

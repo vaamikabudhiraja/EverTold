@@ -2,11 +2,11 @@
 
 The marketing website for **EverTold**, a studio that makes custom wedding websites. It's a scroll-told, cinematic page that tells couples what we make, lets them try an AI concierge, walks through the process and packages, and collects inquiries.
 
-| Route | What it is |
-| --- | --- |
-| `/` | The EverTold website |
+| Route            | What it is                                                                                |
+| ---------------- | ----------------------------------------------------------------------------------------- |
+| `/`              | The EverTold website                                                                      |
 | `/api/concierge` | Streams answers from EverTold's AI concierge (Claude), grounded in the site's own content |
-| `/api/inquiry` | Saves an inquiry from the "Get in touch" form |
+| `/api/inquiry`   | Saves an inquiry from the "Get in touch" form                                             |
 
 ## Running it
 
@@ -20,19 +20,20 @@ Other scripts: `npm run build`, `npm start`, `npm run lint`.
 
 ## Environment
 
-| Variable | Purpose |
-| --- | --- |
-| `ANTHROPIC_API_KEY` | Turns on the live AI concierge. Without it the concierge answers from the site content using simple keyword matching, so the page still works. |
-| `CONCIERGE_MODEL` | Optional model override. Defaults to `claude-opus-5-5`. |
-| `EVERTOLD_DATA_DIR` | Where inquiries are stored (default `./.data`). |
-| `NEXT_PUBLIC_SITE_URL` | Public URL, used for social previews. |
+| Variable               | Purpose                                                                                                                                        |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ANTHROPIC_API_KEY`    | Turns on the live AI concierge. Without it the concierge answers from the site content using simple keyword matching, so the page still works. |
+| `CONCIERGE_MODEL`      | Optional model override. Defaults to `claude-opus-5-5`.                                                                                        |
+| `EVERTOLD_DATA_DIR`    | Where inquiries are stored (default `./.data`).                                                                                                |
+| `NEXT_PUBLIC_SITE_URL` | Public URL, used for social previews.                                                                                                          |
 
 ## Editing the content
 
 - **Services, packages, process steps and FAQs:** `src/content/studio.ts`. The page sections render from this file and the concierge answers from it, so one edit updates both.
 - **Email, Instagram and the one-line description:** `src/content/site.ts`.
-- **Landing film:** `public/media/hero-film.{mp4,webm}` with `hero-film-poster.jpg`. Run `scripts/encode-film.sh your-clip.mp4 hero-film` (needs ffmpeg) to produce a muted loop in all three formats; add `cut` as a third argument when the camera moves, so the loop restarts cleanly instead of crossfading.
-- **Photos:** the page photos live in `public/photos/` and are listed in `src/content/media.ts`. The "What we make" cards use `public/photos/services/` — those are still stand-ins cut from the hero film; replace the files (same names) when the real pictures are ready.
+- **Landing film:** the film strip on the first screen is drawn live in the page (`src/components/landing/FilmStrip.tsx`), not a video, so phones never show a play button. Its ten pictures are `public/film/01–10.webp`, listed in order in `filmStrip` in `src/content/media.ts`; swap a file to change a frame. The timing is built for ten frames.
+- **Photos:** the page photos live in `public/photos/` and are listed in `src/content/media.ts`. The "What we make" cards use `public/photos/services/` — those are still stand-ins; replace the files (same names) when the real pictures are ready.
+- **Social preview image:** `public/media/og.jpg`.
 
 ## Before going live
 

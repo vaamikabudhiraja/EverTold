@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Instrument_Serif, Inter_Tight } from "next/font/google";
+import { Anton, Archivo_Narrow, IBM_Plex_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
 
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { site } from "@/content/site";
@@ -23,6 +23,20 @@ const sans = Inter_Tight({
   subsets: ["latin"],
 });
 
+// The opening film's title card and edge printing.
+const filmTitle = Archivo_Narrow({
+  variable: "--font-film",
+  weight: "700",
+  subsets: ["latin"],
+});
+
+const filmMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  weight: "400",
+  subsets: ["latin"],
+  preload: false,
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -33,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — Wedding websites your guests step into`,
     description: site.description,
-    images: ["/media/hero-film-poster.jpg"],
+    images: ["/media/og.jpg"],
   },
 };
 
@@ -43,7 +57,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${serif.variable} ${sans.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${serif.variable} ${sans.variable} ${filmTitle.variable} ${filmMono.variable}`}
+    >
       <body>
         <SmoothScroll />
         {children}

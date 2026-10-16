@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { NeonSign } from "@/components/NeonSign";
-import { heroFilm } from "@/content/media";
-import { gsap, MOTION, useGSAP } from "@/lib/gsap";
+import { gsap, MOTION, ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { FilmStrip } from "./FilmStrip";
 import styles from "./landing.module.css";
 
 /**
@@ -13,9 +13,18 @@ import styles from "./landing.module.css";
  */
 export function Hero() {
   const root = useRef<HTMLDivElement>(null);
+  // The film stops drawing once the pitch has covered it.
+  const [filmInView, setFilmInView] = useState(true);
 
   useGSAP(
     () => {
+      ScrollTrigger.create({
+        trigger: "[data-intro]",
+        start: "top top",
+        end: "max",
+        onToggle: (self) => setFilmInView(!self.isActive),
+      });
+
       const mm = gsap.matchMedia();
       mm.add(MOTION.motion, () => {
         const scrub = { trigger: "[data-intro]", start: "top bottom", end: "top top", scrub: true };
@@ -36,10 +45,7 @@ export function Hero() {
       <section className={styles.hero} aria-label="EverTold film">
         <div className={styles.heroMedia} data-hero-media>
           <div className={styles.heroMediaIn}>
-            <video autoPlay muted loop playsInline preload="auto" poster={heroFilm.poster} aria-hidden>
-              <source src={heroFilm.webm} type="video/webm" />
-              <source src={heroFilm.mp4} type="video/mp4" />
-            </video>
+            <FilmStrip playing={filmInView} />
           </div>
         </div>
 

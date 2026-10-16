@@ -10,11 +10,32 @@ export type Photo = {
  * section that uses it updates.
  */
 
-export const heroFilm = {
-  mp4: "/media/hero-film.mp4",
-  webm: "/media/hero-film.webm",
-  poster: "/media/hero-film-poster.jpg",
+export type FilmFrame = {
+  src: string;
+  /** object-position inside the 600 × 750 frame. */
+  position: string;
+  /** A wider frame for a landscape picture. */
+  wide?: boolean;
+  /** Pushes the picture in slightly, to crop away its edges. */
+  zoom?: number;
 };
+
+/**
+ * The opening film strip, in the order the frames pull through the gate.
+ * It's drawn live in the page (not a video), so it plays on every phone.
+ */
+export const filmStrip: FilmFrame[] = [
+  { src: "/film/01.webp", position: "50% 50%" },
+  { src: "/film/02.webp", position: "50% 60%" },
+  { src: "/film/03.webp", position: "50% 60%" },
+  { src: "/film/04.webp", position: "50% 60%" },
+  { src: "/film/05.webp", position: "50% 50%" },
+  { src: "/film/06.webp", position: "50% 50%" },
+  { src: "/film/07.webp", position: "50% 50%" },
+  { src: "/film/08.webp", position: "50% 0%" },
+  { src: "/film/09.webp", position: "0% 50%" },
+  { src: "/film/10.webp", position: "50% 50%", wide: true, zoom: 1.07 },
+];
 
 /** Photos used across the page: the about section, the photo scatter and the colour panels. */
 export const photos = {
@@ -48,11 +69,23 @@ export const photos = {
     width: 2000,
     height: 2000,
   },
+  elevator: {
+    src: "/film/01.webp",
+    alt: "Bride and groom kissing in a brass-framed hotel lift",
+    width: 735,
+    height: 916,
+  },
+  curb: {
+    src: "/film/03.webp",
+    alt: "Bride and groom in sunglasses eating pizza on a kerb at night",
+    width: 736,
+    height: 920,
+  },
 } satisfies Record<string, Photo>;
 
 /**
- * One picture per "What we make" card. These are stand-ins cut from the hero
- * film; replace the files (same names) when the real pictures arrive.
+ * One picture per "What we make" card. These are stand-ins; replace the files
+ * (same names) when the real pictures arrive.
  */
 export const servicePhotos = {
   storySite: {
@@ -72,6 +105,12 @@ export const servicePhotos = {
     alt: "A bride in sunglasses and a veil at dinner",
     width: 900,
     height: 1201,
+  },
+  schedule: {
+    src: "/photos/services/schedule.webp",
+    alt: "A bride and groom in sunglasses walking hand in hand past a restaurant",
+    width: 736,
+    height: 920,
   },
   gallery: {
     src: "/photos/services/gallery.jpg",

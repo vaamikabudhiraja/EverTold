@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 
-import { heroFilm, servicePhotos } from "@/content/media";
+import { servicePhotos } from "@/content/media";
 import { services, type Service } from "@/content/studio";
 import { gsap, MOTION, useGSAP } from "@/lib/gsap";
 import styles from "./landing.module.css";
@@ -17,14 +17,6 @@ function CardMedia({ media }: { media: Service["media"] }) {
         <p className={styles.mockUser}>And is there a shuttle back to the hotel?</p>
         <p className={styles.mockBot}>Yes, every 45 minutes from the venue until the music stops.</p>
       </div>
-    );
-  }
-  if (media === "film") {
-    return (
-      <video autoPlay muted loop playsInline poster={heroFilm.poster} aria-hidden>
-        <source src={heroFilm.webm} type="video/webm" />
-        <source src={heroFilm.mp4} type="video/mp4" />
-      </video>
     );
   }
   const p = servicePhotos[media];

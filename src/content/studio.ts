@@ -6,8 +6,8 @@
 export type Service = {
   title: string;
   body: string;
-  /** Visual for the service card: a key of servicePhotos in media.ts, the hero film, or a chat illustration. */
-  media: "chat" | "film" | "storySite" | "rsvp" | "vault" | "gallery";
+  /** Visual for the service card: a key of servicePhotos in media.ts, or a chat illustration. */
+  media: "chat" | "storySite" | "rsvp" | "vault" | "schedule" | "gallery";
 };
 
 export const services: Service[] = [
@@ -34,7 +34,7 @@ export const services: Service[] = [
   {
     title: "Schedule & Travel",
     body: "Multi-day itineraries with add-to-calendar, maps, shuttle times, room-block codes and weather — everything a travelling guest needs.",
-    media: "film",
+    media: "schedule",
   },
   {
     title: "Gallery & Keepsake",
