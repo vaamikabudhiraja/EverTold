@@ -872,7 +872,11 @@ a.headerMeta:hover {
   font-weight: 400;
   letter-spacing: -0.02em;
   z-index: 1;
-  mix-blend-mode: difference;
+  color: var(--ivory);
+  /* Readable over pale walls and signs as well as dark rooms. */
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.6),
+    0 1px 12px rgba(0, 0, 0, 0.55);
 }
 
 .cardBody {

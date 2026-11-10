@@ -84,27 +84,27 @@ export const photos = {
 } satisfies Record<string, Photo>;
 
 /**
- * One picture per "What we make" card. These are stand-ins; replace the files
- * (same names) when the real pictures arrive.
+ * One picture per "What we make" card. Replace a file (same name) to change
+ * a card's picture.
  */
 export const servicePhotos = {
   storySite: {
-    src: "/photos/services/story-site.jpg",
-    alt: "A couple sharing noodles at a restaurant table",
-    width: 1200,
-    height: 1197,
+    src: "/photos/services/story-site.webp",
+    alt: "A bride and groom in sunglasses eating noodles at a restaurant table",
+    width: 480,
+    height: 594,
   },
   rsvp: {
-    src: "/photos/services/rsvp.jpg",
-    alt: "A groom in sunglasses lifting noodles with chopsticks",
-    width: 900,
-    height: 1201,
+    src: "/photos/services/rsvp.webp",
+    alt: "A bride and groom toasting with champagne on the floor of a hotel corridor",
+    width: 720,
+    height: 900,
   },
   vault: {
-    src: "/photos/services/vault.jpg",
-    alt: "A bride in sunglasses and a veil at dinner",
-    width: 900,
-    height: 1201,
+    src: "/photos/services/vault.webp",
+    alt: "Black and white photo of a groom carrying the bride on his back in a hotel room",
+    width: 735,
+    height: 922,
   },
   schedule: {
     src: "/photos/services/schedule.webp",
@@ -113,9 +113,9 @@ export const servicePhotos = {
     height: 920,
   },
   gallery: {
-    src: "/photos/services/gallery.jpg",
-    alt: "Black and white view of a restaurant bar",
-    width: 880,
-    height: 1200,
+    src: "/photos/services/gallery.webp",
+    alt: "Black and white photo of a groom carrying the bride over his shoulder at night",
+    width: 636,
+    height: 730,
   },
 } satisfies Record<string, Photo>;

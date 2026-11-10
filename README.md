@@ -32,7 +32,7 @@ Other scripts: `npm run build`, `npm start`, `npm run lint`.
 - **Services, packages, process steps and FAQs:** `src/content/studio.ts`. The page sections render from this file and the concierge answers from it, so one edit updates both.
 - **Email, Instagram and the one-line description:** `src/content/site.ts`.
 - **Landing film:** the film strip on the first screen is drawn live in the page (`src/components/landing/FilmStrip.tsx`), not a video, so phones never show a play button. Its ten pictures are `public/film/01–10.webp`, listed in order in `filmStrip` in `src/content/media.ts`; swap a file to change a frame. The timing is built for ten frames.
-- **Photos:** the page photos live in `public/photos/` and are listed in `src/content/media.ts`. The "What we make" cards use `public/photos/services/` — those are still stand-ins; replace the files (same names) when the real pictures are ready.
+- **Photos:** the page photos live in `public/photos/` and are listed in `src/content/media.ts`. The "What we make" cards use `public/photos/services/`; replace a file (same name) to change a card's picture.
 - **Social preview image:** `public/media/og.jpg`.
 
 ## Before going live
